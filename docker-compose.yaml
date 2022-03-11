@@ -1,0 +1,110 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:13.0
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  initdb:
+    build: .
+    depends_on:
+      - postgres
+    environment: &airflow-common-env
+      AIRFLOW_HOME: /root/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__FERNET_KEY: ""
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      GOOGLE_APPLICATION_CREDENTIALS: '/root/airflow/dags/credentials/data-lake-eximio-193dc7576d5c.json'
+      SENDGRID_MAIL_FROM: 'guilherme.aguiar@eximio.med.br'
+      SENDGRID_API_KEY: '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'
+      AIRFLOW__CORE__REMOTE_LOGGING: 'True'
+      AIRFLOW__CORE__REMOTE_BASE_LOG_FOLDER: 's3://eximio-airflow-logs'
+      AIRFLOW__CORE__ENCRYPT_S3_LOGS: 'False'
+      AWS_ACCESS_KEY_ID: 'AKIAY4QE4MIBP5RQOIPH'
+      AWS_SECRET_ACCESS_KEY: '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'
+      AWS_SMTP_USERNAME: 'AKIAY4QE4MIBHKSG7H44'
+      AWS_SMTP_PASSWORD: 'BAPPIKrsJ5aCiZPFZHBqutMr5P9Jh/4K1fuq9qdt/e1M'
+      TNS_ADMIN: '/etc/tnsnames.ora'
+      AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: '60'
+      AIRFLOW__SCHEDULER__PARSING_PROCESSES: '2'
+      AIRFLOW__WEBSERVER__WORKER_REFRESH_INTERVAL: '6000'
+      AIRFLOW__WEBSERVER__WORKER_REFRESH_BATCH_SIZE: '1'
+      AIRFLOW__SCHEDULER__PROCESSOR_POLL_INTERVAL: '60'
+    command: bash -c "airflow db init && airflow users create --firstname admin --lastname admin --email admin --password admin --username admin --role Admin"
+
+  webserver:
+    build: .
+    depends_on:
+      - initdb
+    environment:
+      <<: *airflow-common-env
+    volumes:
+      - ./dags:/root/airflow/dags:rw
+      - ./plugins:/root/airflow/plugins:rw
+      - airflow-worker-logs:/root/airflow/logs:rw
+      - ./utils:/root/airflow/dags/utils:rw
+      - ./credentials:/root/airflow/dags/credentials:rw
+      - ./connections:/root/airflow/dags/connections:rw
+      - ./queries:/root/airflow/dags/queries:rw
+      - ./great_expectations:/root/airflow/dags/great_expectations:rw
+      - ./dag_execution:/root/airflow/dags/dag_execution:rw
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    command: airflow webserver
+
+  scheduler:
+    build: .
+    depends_on:
+      - webserver
+    environment:
+      <<: *airflow-common-env
+    volumes:
+      - ./dags:/root/airflow/dags:rw
+      - ./plugins:/root/airflow/plugins:rw
+      - airflow-worker-logs:/root/airflow/logs:rw
+      - ./utils:/root/airflow/dags/utils:rw
+      - ./credentials:/root/airflow/dags/credentials:rw
+      - ./connections:/root/airflow/dags/connections:rw
+      - ./queries:/root/airflow/dags/queries:rw
+      - ./great_expectations:/root/airflow/dags/great_expectations:rw
+      - ./dag_execution:/root/airflow/dags/dag_execution:rw
+    command: airflow scheduler
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+
+#  test:
+#    build: .
+#    environment:
+#      AIRFLOW_HOME: /repo
+#    working_dir: /repo
+#    volumes:
+#      - .:/repo
+#    entrypoint: make internal-test
+#
+#  lint:
+#    build: .
+#    working_dir: /repo
+#    volumes:
+#      - .:/repo
+#    entrypoint: make internal-lint
+
+volumes:
+  postgres: {}
+  airflow-worker-logs:
