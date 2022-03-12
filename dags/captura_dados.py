@@ -233,9 +233,9 @@ def df_ped_ex_ext():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_ped_ex_ext, connect_ugo())
+        df_dim = pd.read_sql(query_ped_ex_ext.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_ped_ex_ext_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_ped_ex_ext_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["NR_SEQUENCIA"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -448,9 +448,9 @@ def df_atendimento_paciente():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_atendimento_paciente, connect_ugo())
+        df_dim = pd.read_sql(query_atendimento_paciente.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_atendimento_paciente_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_atendimento_paciente_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["NR_ATENDIMENTO"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -495,9 +495,9 @@ def df_atend_paciente_unidade():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_atend_paciente_unidade, connect_ugo())
+        df_dim = pd.read_sql(query_atend_paciente_unidade.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_atend_paciente_unidade_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_atend_paciente_unidade_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["NR_ATENDIMENTO"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -584,9 +584,9 @@ def df_atend_categoria_convenio():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_atend_categoria_convenio, connect_ugo())
+        df_dim = pd.read_sql(query_atend_categoria_convenio.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_atend_categoria_convenio_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_atend_categoria_convenio_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["NR_ATENDIMENTO"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -715,9 +715,9 @@ def df_pessoa_fisica_medico():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_pessoa_fisica_medico, connect_ugo())
+        df_dim = pd.read_sql(query_pessoa_fisica_medico.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_pessoa_fisica_medico_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_pessoa_fisica_medico_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["CD_PESSOA_FISICA"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -762,9 +762,9 @@ def df_pessoa_fiica_pac():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_pessoa_fisica_pac, connect_ugo())
+        df_dim = pd.read_sql(query_pessoa_fisica_pac.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_pessoa_fisica_pac_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_pessoa_fisica_pac_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["CD_PESSOA_FISICA"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
@@ -809,9 +809,9 @@ def df_pac_senha_fila():
 
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
-        df_dim = pd.read_sql(query_pac_senha_fila, connect_ugo())
+        df_dim = pd.read_sql(query_pac_senha_fila.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo())
 
-        df_stage = pd.read_sql(query_pac_senha_fila_hdata, connect_ugo_hdata())
+        df_stage = pd.read_sql(query_pac_senha_fila_hdata.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_ugo_hdata())
 
         df_diff = df_dim.merge(df_stage["NR_SEQ_FILA_SENHA"],indicator = True, how='left').loc[lambda x : x['_merge'] !='both']
         df_diff = df_diff.drop(columns=['_merge'])
