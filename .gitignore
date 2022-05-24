@@ -1,0 +1,13 @@
+logs/
+*.pyc
+connections/conn.py
+connections/postgres/connections.py
+connections/oracle/connections.py
+connections/rabbitmq/rabbitmq_credentials.py
+.gitsecret/keys/random_seed
+docker-compose.yaml
+Dockerfile
+*.xml
+*.iml
+data/
+credentials/data-lake-eximio-193dc7576d5c.json

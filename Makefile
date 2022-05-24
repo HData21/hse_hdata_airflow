@@ -1,5 +1,5 @@
 PYTHON_VERSION := 3.8
-AIRFLOW_VERSION := 2.0.0
+AIRFLOW_VERSION := 2.3.0
 # Must be comma-separated, no spaces
 AIRFLOW_EXTRAS := postgres
 CONSTRAINT := https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt
@@ -54,8 +54,8 @@ clean-all: clean-pytest clean-venv reset-airflow
 
 # starts Postgres
 start-db:
-# 	@docker-compose up -d postgres
-# 	@docker-compose up initdb
+	@docker-compose up -d postgres
+	@docker-compose up initdb
 
 # starts Airflow
 start-airflow: start-db
