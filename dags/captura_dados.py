@@ -10,18 +10,18 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from connections.oracle.connections import connect_hse, connect_hdata, engine_hse, connect
 from collections import OrderedDict as od
-from queries.rhp.queries import *
-from queries.rhp.queries_hdata import *
+from queries.hse.queries import *
+from queries.hse.queries_hdata import *
 
 from utils.integrity_checker import notify_email
 
-START_DATE = airflow.utils.dates.days_ago(2)
+START_DATE = airflow.utils.dates.days_ago(0)
 
 default_args = {
     "owner": "raphael",
     "depends_on_past": False,
     "start_date": START_DATE,
-    "email": ["raphael.queiroz@eximio.med.br"],
+    "email": ["raphael.queiroz@hdata.med.br"],
     "email_on_failure": False,
     "email_on_retry": False,
     "retries": 0,
