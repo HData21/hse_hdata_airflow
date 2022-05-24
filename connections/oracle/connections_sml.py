@@ -1,3 +1,10 @@
+import os
+
+import cx_Oracle
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 def connect_hse():
     os.environ["NLS_LANG"] = ".UTF8"
     # dsn_tns = cx_Oracle.makedsn('IP', 1521, service_name='sml')  # 172.17.0.1
