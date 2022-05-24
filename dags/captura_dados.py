@@ -8,7 +8,7 @@ from datetime import timedelta, date
 from dateutil import rrule
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from connections.oracle.connections import connect_hse, connect_hdata, engine_hse, connect
+from connections.oracle.connections_sml import connect_hse, connect_hdata, engine_hse, connect
 from collections import OrderedDict as od
 from queries.hse.queries import *
 from queries.hse.queries_hdata import *
