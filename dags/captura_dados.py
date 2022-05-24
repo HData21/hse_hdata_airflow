@@ -114,7 +114,7 @@ def df_atendime():
         con = connect_hdata()
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.ATENDIME (CD_ATENDIMENTO, CD_MULTI_EMPRESA, CD_PACIENTE, CD_CID, CD_MOT_ALT, CD_TIP_RES, CD_CONVENIO, CD_ESPECIALID, CD_PRESTADOR, CD_ATENDIMENTO_PAI, CD_LEITO, CD_ORI_ATE, CD_SERVICO, TP_ATENDIMENTO, DT_ATENDIMENTO, HR_ATENDIMENTO, HR_ALTA, HR_ALTA_MEDICA, CD_TIP_MAR, CD_SINTOMA_AVALIACAO, NM_USUARIO_ALTA_MEDICA) VALUES (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18, :19, :20, :21)"
+        sql="INSERT INTO HSE.ATENDIME (CD_ATENDIMENTO, CD_MULTI_EMPRESA, CD_PACIENTE, CD_CID, CD_MOT_ALT, CD_TIP_RES, CD_CONVENIO, CD_ESPECIALID, CD_PRESTADOR, CD_ATENDIMENTO_PAI, CD_LEITO, CD_ORI_ATE, CD_SERVICO, TP_ATENDIMENTO, DT_ATENDIMENTO, HR_ATENDIMENTO, HR_ALTA, HR_ALTA_MEDICA, CD_TIP_MAR, CD_SINTOMA_AVALIACAO, NM_USUARIO_ALTA_MEDICA) VALUES (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18, :19, :20, :21)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -142,7 +142,7 @@ def df_atendime():
         # if not df_upd.empty:
 
         #     update_cells(df_upd,
-        #                 'MV_RHP.ATENDIME',
+        #                 'HSE.ATENDIME',
         #                 'CD_ATENDIMENTO')
 
         df_diagnostico_atendime(atendimentos)
@@ -165,7 +165,7 @@ def df_cid():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.CID (CD_CID, DS_CID, CD_SGRU_CID) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.CID (CD_CID, DS_CID, CD_SGRU_CID) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -217,7 +217,7 @@ def df_classificacao_risco():
 
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.SACR_CLASSIFICACAO_RISCO (CD_CLASSIFICACAO_RISCO, CD_COR_REFERENCIA, CD_TRIAGEM_ATENDIMENTO, DH_CLASSIFICACAO_RISCO, CD_CLASSIFICACAO) VALUES (:1, :2, :3, :4, :5)"
+        sql="INSERT INTO HSE.SACR_CLASSIFICACAO_RISCO (CD_CLASSIFICACAO_RISCO, CD_COR_REFERENCIA, CD_TRIAGEM_ATENDIMENTO, DH_CLASSIFICACAO_RISCO, CD_CLASSIFICACAO) VALUES (:1, :2, :3, :4, :5)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -242,7 +242,7 @@ def df_classificacao_risco():
         # if not df_upd.empty:
 
         #     update_cells(df_upd,
-        #                 'MV_RHP.SACR_CLASSIFICACAO_RISCO',
+        #                 'HSE.SACR_CLASSIFICACAO_RISCO',
         #                 'CD_CLASSIFICACAO_RISCO')
 
 def df_classificacao():
@@ -263,7 +263,7 @@ def df_classificacao():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.SACR_CLASSIFICACAO (CD_CLASSIFICACAO, DS_TIPO_RISCO, CD_COR_REFERENCIA) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.SACR_CLASSIFICACAO (CD_CLASSIFICACAO, DS_TIPO_RISCO, CD_COR_REFERENCIA) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -305,7 +305,7 @@ def df_convenio():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.CONVENIO (CD_CONVENIO, NM_CONVENIO) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.CONVENIO (CD_CONVENIO, NM_CONVENIO) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -347,7 +347,7 @@ def df_cor_referencia():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.SACR_COR_REFERENCIA (CD_COR_REFERENCIA, NM_COR) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.SACR_COR_REFERENCIA (CD_COR_REFERENCIA, NM_COR) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -389,7 +389,7 @@ def df_diagnostico_atendime(atendimentos):
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.DIAGNOSTICO_ATENDIME (CD_CID, CD_DIAGNOSTICO_ATENDIME, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.DIAGNOSTICO_ATENDIME (CD_CID, CD_DIAGNOSTICO_ATENDIME, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -441,7 +441,7 @@ def df_documento_clinico():
 
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.PW_DOCUMENTO_CLINICO (CD_OBJETO, CD_ATENDIMENTO, CD_TIPO_DOCUMENTO, TP_STATUS, DH_CRIACAO) VALUES (:1, :2, :3, :4, :5)"
+        sql="INSERT INTO HSE.PW_DOCUMENTO_CLINICO (CD_OBJETO, CD_ATENDIMENTO, CD_TIPO_DOCUMENTO, TP_STATUS, DH_CRIACAO) VALUES (:1, :2, :3, :4, :5)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -465,7 +465,7 @@ def df_documento_clinico():
 
         # if not df_upd.empty:
 
-        #     update_cells(df_upd, 'MV_RHP.PW_DOCUMENTO_CLINICO', 'CD_OBJETO')
+        #     update_cells(df_upd, 'HSE.PW_DOCUMENTO_CLINICO', 'CD_OBJETO')
 
 def df_esp_med():
     print("Entrou no df_esp_med")
@@ -487,7 +487,7 @@ def df_esp_med():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.ESP_MED (CD_ESPECIALID, CD_PRESTADOR, SN_ESPECIAL_PRINCIPAL) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.ESP_MED (CD_ESPECIALID, CD_PRESTADOR, SN_ESPECIAL_PRINCIPAL) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -529,7 +529,7 @@ def df_especialidad():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.ESPECIALID (CD_ESPECIALID, DS_ESPECIALID) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.ESPECIALID (CD_ESPECIALID, DS_ESPECIALID) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -571,7 +571,7 @@ def df_gru_cid():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.GRU_CID (CD_GRU_CID, DS_GRU_CID) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.GRU_CID (CD_GRU_CID, DS_GRU_CID) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -613,7 +613,7 @@ def df_mot_alt():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.MOT_ALT (CD_MOT_ALT, DS_MOT_ALT, TP_MOT_ALTA) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.MOT_ALT (CD_MOT_ALT, DS_MOT_ALT, TP_MOT_ALTA) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -648,7 +648,7 @@ def df_multi_empresa():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.MULTI_EMPRESAS (CD_MULTI_EMPRESA, DS_MULTI_EMPRESA) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.MULTI_EMPRESAS (CD_MULTI_EMPRESA, DS_MULTI_EMPRESA) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -690,7 +690,7 @@ def df_ori_ate():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.ORI_ATE (CD_ORI_ATE, DS_ORI_ATE, TP_ORIGEM, CD_SETOR) VALUES (:1, :2, :3, :4)"
+    sql="INSERT INTO HSE.ORI_ATE (CD_ORI_ATE, DS_ORI_ATE, TP_ORIGEM, CD_SETOR) VALUES (:1, :2, :3, :4)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -732,7 +732,7 @@ def df_prestador():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.PRESTADOR (CD_PRESTADOR, NM_PRESTADOR, DT_NASCIMENTO, TP_PRESTADOR, CD_TIP_PRESTA) VALUES (:1, :2, :3, :4, :5)"
+    sql="INSERT INTO HSE.PRESTADOR (CD_PRESTADOR, NM_PRESTADOR, DT_NASCIMENTO, TP_PRESTADOR, CD_TIP_PRESTA) VALUES (:1, :2, :3, :4, :5)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -780,7 +780,7 @@ def df_paciente():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.PACIENTE (CD_PACIENTE, DT_NASCIMENTO, TP_SEXO, DT_CADASTRO, NM_BAIRRO) VALUES (:1, :2, :3, :4, :5)"
+    sql="INSERT INTO HSE.PACIENTE (CD_PACIENTE, DT_NASCIMENTO, TP_SEXO, DT_CADASTRO, NM_BAIRRO) VALUES (:1, :2, :3, :4, :5)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -822,7 +822,7 @@ def df_pagu_objeto():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.PAGU_OBJETO (CD_OBJETO, TP_OBJETO) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.PAGU_OBJETO (CD_OBJETO, TP_OBJETO) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -871,7 +871,7 @@ def df_registro_alta():
 
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.PW_REGISTRO_ALTA (CD_ATENDIMENTO, HR_ALTA_MEDICA) VALUES (:1, :2)"
+        sql="INSERT INTO HSE.PW_REGISTRO_ALTA (CD_ATENDIMENTO, HR_ALTA_MEDICA) VALUES (:1, :2)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -895,7 +895,7 @@ def df_registro_alta():
 
         # if not df_upd.empty:
 
-        #     update_cells(df_upd, 'MV_RHP.PW_REGITRO_ALTA', 'CD_ATENDIMENTO')
+        #     update_cells(df_upd, 'HSE.PW_REGITRO_ALTA', 'CD_ATENDIMENTO')
 
 def df_setor():
     print("Entrou no df_setor")
@@ -915,7 +915,7 @@ def df_setor():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.SETOR (CD_SETOR, NM_SETOR) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.SETOR (CD_SETOR, NM_SETOR) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -957,7 +957,7 @@ def df_sgru_cid():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.SGRU_CID (CD_SGRU_CID, CD_GRU_CID, DS_SGRU_CID) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.SGRU_CID (CD_SGRU_CID, CD_GRU_CID, DS_SGRU_CID) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -999,7 +999,7 @@ def df_sintoma_avaliacao():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.SACR_SINTOMA_AVALIACAO (CD_SINTOMA_AVALIACAO, DS_SINTOMA) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.SACR_SINTOMA_AVALIACAO (CD_SINTOMA_AVALIACAO, DS_SINTOMA) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -1049,7 +1049,7 @@ def df_tempo_processo():
 
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.SACR_TEMPO_PROCESSO (DH_PROCESSO, CD_TIPO_TEMPO_PROCESSO, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
+        sql="INSERT INTO HSE.SACR_TEMPO_PROCESSO (DH_PROCESSO, CD_TIPO_TEMPO_PROCESSO, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -1073,7 +1073,7 @@ def df_tempo_processo():
         # print("dados para update")
         # print(df_upd.info())
 
-        # update_cells(df_upd, 'MV_RHP.SACR_TEMPO_PROCESSO', 'CD_ATENDIMENTO')
+        # update_cells(df_upd, 'HSE.SACR_TEMPO_PROCESSO', 'CD_ATENDIMENTO')
 
 def df_tip_mar():
     print("Entrou no df_tip_mar")
@@ -1093,7 +1093,7 @@ def df_tip_mar():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.TIP_MAR (CD_TIP_MAR) VALUES (:1)"
+    sql="INSERT INTO HSE.TIP_MAR (CD_TIP_MAR) VALUES (:1)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -1135,7 +1135,7 @@ def df_tip_res():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.TIP_RES (CD_TIP_RES, DS_TIP_RES, SN_OBITO) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.TIP_RES (CD_TIP_RES, DS_TIP_RES, SN_OBITO) VALUES (:1, :2, :3)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -1187,7 +1187,7 @@ def df_triagem_atendimento():
 
         cursor = con.cursor()
 
-        sql="INSERT INTO MV_RHP.TRIAGEM_ATENDIMENTO (CD_TRIAGEM_ATENDIMENTO, CD_ATENDIMENTO, CD_SINTOMA_AVALIACAO, DS_SENHA, DH_PRE_ATENDIMENTO) VALUES (:1, :2, :3, :4, :5)"
+        sql="INSERT INTO HSE.TRIAGEM_ATENDIMENTO (CD_TRIAGEM_ATENDIMENTO, CD_ATENDIMENTO, CD_SINTOMA_AVALIACAO, DS_SENHA, DH_PRE_ATENDIMENTO) VALUES (:1, :2, :3, :4, :5)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -1211,7 +1211,7 @@ def df_triagem_atendimento():
 
         # if not df_upd.empty:
 
-        #     update_cells(df_upd, 'MV_RHP.TRIAGEM_ATENDIMENTO', 'CD_TRIAGEM_ATENDIMENTO')
+        #     update_cells(df_upd, 'HSE.TRIAGEM_ATENDIMENTO', 'CD_TRIAGEM_ATENDIMENTO')
 
 def df_usuario():
     print("Entrou no df_usuario")
@@ -1231,7 +1231,7 @@ def df_usuario():
 
     cursor = con.cursor()
 
-    sql="INSERT INTO MV_RHP.USUARIOS (CD_USUARIO, NM_USUARIO) VALUES (:1, :2)"
+    sql="INSERT INTO HSE.USUARIOS (CD_USUARIO, NM_USUARIO) VALUES (:1, :2)"
 
     df_list = df_diff.values.tolist()
     n = 0
@@ -1262,150 +1262,150 @@ dag = DAG("captura_dados_hse_sml", default_args=default_args, schedule_interval=
 # dag = DAG("captura_dados_hse_sml", default_args=default_args, schedule_interval="0 6,7,8,9 * * *")
 
 t0 = PythonOperator(
-    task_id="captura_atendime_rhp",
+    task_id="captura_atendime_hse",
     python_callable=df_atendime,
     on_failure_callback=notify_email,
     dag=dag)
 
 t1 = PythonOperator(
-    task_id="captura_cid_rhp",
+    task_id="captura_cid_hse",
     python_callable=df_cid,
     on_failure_callback=notify_email,
     dag=dag)
 
 t2 = PythonOperator(
-    task_id="captura_classificacao_risco_rhp",
+    task_id="captura_classificacao_risco_hse",
     python_callable=df_classificacao_risco,
     on_failure_callback=notify_email,
     dag=dag)
 
 t3 = PythonOperator(
-    task_id="captura_classificacao_rhp",
+    task_id="captura_classificacao_hse",
     python_callable=df_classificacao,
     on_failure_callback=notify_email,
     dag=dag)
 
 t4 = PythonOperator(
-    task_id="captura_convenio_rhp",
+    task_id="captura_convenio_hse",
     python_callable=df_convenio,
     on_failure_callback=notify_email,
     dag=dag)
 
 t5 = PythonOperator(
-    task_id="captura_cor_referencia_rhp",
+    task_id="captura_cor_referencia_hse",
     python_callable=df_cor_referencia,
     on_failure_callback=notify_email,
     dag=dag)
 
 t7 = PythonOperator(
-    task_id="captura_documento_clinico_rhp",
+    task_id="captura_documento_clinico_hse",
     python_callable=df_documento_clinico,
     on_failure_callback=notify_email,
     dag=dag)
 
 t8 = PythonOperator(
-    task_id="captura_esp_med_rhp",
+    task_id="captura_esp_med_hse",
     python_callable=df_esp_med,
     on_failure_callback=notify_email,
     dag=dag)
 
 t9 = PythonOperator(
-    task_id="captura_especialidad_rhp",
+    task_id="captura_especialidad_hse",
     python_callable=df_especialidad,
     on_failure_callback=notify_email,
     dag=dag)
 
 t10 = PythonOperator(
-    task_id="captura_gru_cid_rhp",
+    task_id="captura_gru_cid_hse",
     python_callable=df_gru_cid,
     on_failure_callback=notify_email,
     dag=dag)
 
 t10 = PythonOperator(
-    task_id="captura_prestador_rhp",
+    task_id="captura_prestador_hse",
     python_callable=df_prestador,
     on_failure_callback=notify_email,
     dag=dag)
 
 t11 = PythonOperator(
-    task_id="captura_mot_alt_rhp",
+    task_id="captura_mot_alt_hse",
     python_callable=df_mot_alt,
     dag=dag)
 
 t12 = PythonOperator(
-    task_id="captura_multi_empresa_rhp",
+    task_id="captura_multi_empresa_hse",
     python_callable=df_multi_empresa,
     on_failure_callback=notify_email,
     dag=dag)
 
 t13 = PythonOperator(
-    task_id="captura_ori_ate_rhp",
+    task_id="captura_ori_ate_hse",
     python_callable=df_ori_ate,
     on_failure_callback=notify_email,
     dag=dag)
 
 t14 = PythonOperator(
-    task_id="captura_paciente_rhp",
+    task_id="captura_paciente_hse",
     python_callable=df_paciente,
     on_failure_callback=notify_email,
     dag=dag)
 
 t15 = PythonOperator(
-    task_id="captura_pagu_objeto_rhp",
+    task_id="captura_pagu_objeto_hse",
     python_callable=df_pagu_objeto,
     on_failure_callback=notify_email,
     dag=dag)
 
 t16 = PythonOperator(
-    task_id="captura_registro_alta_rhp",
+    task_id="captura_registro_alta_hse",
     python_callable=df_registro_alta,
     on_failure_callback=notify_email,
     dag=dag)
 
 t17 = PythonOperator(
-    task_id="captura_setor_rhp",
+    task_id="captura_setor_hse",
     python_callable=df_setor,
     on_failure_callback=notify_email,
     dag=dag)
 
 t18 = PythonOperator(
-    task_id="captura_sgru_cid_rhp",
+    task_id="captura_sgru_cid_hse",
     python_callable=df_sgru_cid,
     on_failure_callback=notify_email,
     dag=dag)
 
 t19 = PythonOperator(
-    task_id="captura_sintoma_avaliacao_rhp",
+    task_id="captura_sintoma_avaliacao_hse",
     python_callable=df_sintoma_avaliacao,
     on_failure_callback=notify_email,
     dag=dag)
 
 t20 = PythonOperator(
-    task_id="captura_tempo_processo_rhp",
+    task_id="captura_tempo_processo_hse",
     python_callable=df_tempo_processo,
     on_failure_callback=notify_email,
     dag=dag)
 
 t21 = PythonOperator(
-    task_id="captura_tip_mar_rhp",
+    task_id="captura_tip_mar_hse",
     python_callable=df_tip_mar,
     on_failure_callback=notify_email,
     dag=dag)
 
 t22 = PythonOperator(
-    task_id="captura_tip_res_rhp",
+    task_id="captura_tip_res_hse",
     python_callable=df_tip_res,
     on_failure_callback=notify_email,
     dag=dag)
 
 t23 = PythonOperator(
-    task_id="captura_triagem_atendimento_rhp",
+    task_id="captura_triagem_atendimento_hse",
     python_callable=df_triagem_atendimento,
     on_failure_callback=notify_email,
     dag=dag)
 
 t24 = PythonOperator(
-    task_id="captura_usuario_rhp",
+    task_id="captura_usuario_hse",
     python_callable=df_usuario,
     on_failure_callback=notify_email,
     dag=dag)
