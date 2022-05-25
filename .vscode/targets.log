@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 24 16:12:19 2022
+# Make data base, printed on Wed May 25 14:14:14 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 5)
-CONSTRAINT := https://raw.githubusercontent.com/apache/airflow/constraints-2.0.0/constraints-3.8.txt
+CONSTRAINT := https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.8.txt
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -67,9 +67,9 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/raphael/hse_hdata-airflow
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-71eed3d0-cb0b-49eb-8883-807349930a1b.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c5c63fa2-8fd7-4733-a1b0-2e6ccb28b8d1.sock
 # environment
-WSL_INTEROP = /run/WSL/12384_interop
+WSL_INTEROP = /run/WSL/12_interop
 # makefile (from 'Makefile', line 4)
 AIRFLOW_EXTRAS := postgres
 # environment
@@ -141,7 +141,7 @@ HOSTTYPE = x86_64
 # automatic
 ^F = $(notdir $^)
 # makefile (from 'Makefile', line 2)
-AIRFLOW_VERSION := 2.0.0
+AIRFLOW_VERSION := 2.3.0
 # default
 SUFFIXES := 
 # default
@@ -219,7 +219,7 @@ internal-install-deps:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-24 14:29:35.5795933
+#  Last modified 2022-05-24 16:12:41.0695933
 #  File has been updated.
 #  Successfully updated.
 
@@ -281,7 +281,6 @@ test-docker:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 42):
 	@docker-compose up test
 
@@ -291,6 +290,7 @@ reset-airflow:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 70):
 	@docker-compose down -v || true
+ 
 	@docker-compose rm -f
 	rm -f webserver_config.py
 
@@ -362,6 +362,6 @@ internal-test: internal-install-local-deps
 # strcache performance: lookups = 87 / hit rate = 43%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/87=1%
-# Finished Make data base on Tue May 24 16:12:19 2022
+# Finished Make data base on Wed May 25 14:14:14 2022
 
  
