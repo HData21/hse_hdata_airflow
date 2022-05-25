@@ -1267,11 +1267,11 @@ t0 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t1 = PythonOperator(
-    task_id="captura_cid_hse",
-    python_callable=df_cid,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t1 = PythonOperator(
+#     task_id="captura_cid_hse",
+#     python_callable=df_cid,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t2 = PythonOperator(
     task_id="captura_classificacao_risco_hse",
@@ -1279,23 +1279,23 @@ t2 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t3 = PythonOperator(
-    task_id="captura_classificacao_hse",
-    python_callable=df_classificacao,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t3 = PythonOperator(
+#     task_id="captura_classificacao_hse",
+#     python_callable=df_classificacao,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t4 = PythonOperator(
-    task_id="captura_convenio_hse",
-    python_callable=df_convenio,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t4 = PythonOperator(
+#     task_id="captura_convenio_hse",
+#     python_callable=df_convenio,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t5 = PythonOperator(
-    task_id="captura_cor_referencia_hse",
-    python_callable=df_cor_referencia,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t5 = PythonOperator(
+#     task_id="captura_cor_referencia_hse",
+#     python_callable=df_cor_referencia,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t7 = PythonOperator(
     task_id="captura_documento_clinico_hse",
@@ -1303,52 +1303,52 @@ t7 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t8 = PythonOperator(
-    task_id="captura_esp_med_hse",
-    python_callable=df_esp_med,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t8 = PythonOperator(
+#     task_id="captura_esp_med_hse",
+#     python_callable=df_esp_med,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t9 = PythonOperator(
-    task_id="captura_especialidad_hse",
-    python_callable=df_especialidad,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t9 = PythonOperator(
+#     task_id="captura_especialidad_hse",
+#     python_callable=df_especialidad,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t10 = PythonOperator(
-    task_id="captura_gru_cid_hse",
-    python_callable=df_gru_cid,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t10 = PythonOperator(
+#     task_id="captura_gru_cid_hse",
+#     python_callable=df_gru_cid,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t10 = PythonOperator(
-    task_id="captura_prestador_hse",
-    python_callable=df_prestador,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t10 = PythonOperator(
+#     task_id="captura_prestador_hse",
+#     python_callable=df_prestador,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t11 = PythonOperator(
-    task_id="captura_mot_alt_hse",
-    python_callable=df_mot_alt,
-    dag=dag)
+# t11 = PythonOperator(
+#     task_id="captura_mot_alt_hse",
+#     python_callable=df_mot_alt,
+#     dag=dag)
 
-t12 = PythonOperator(
-    task_id="captura_multi_empresa_hse",
-    python_callable=df_multi_empresa,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t12 = PythonOperator(
+#     task_id="captura_multi_empresa_hse",
+#     python_callable=df_multi_empresa,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t13 = PythonOperator(
-    task_id="captura_ori_ate_hse",
-    python_callable=df_ori_ate,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t13 = PythonOperator(
+#     task_id="captura_ori_ate_hse",
+#     python_callable=df_ori_ate,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t14 = PythonOperator(
-    task_id="captura_paciente_hse",
-    python_callable=df_paciente,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t14 = PythonOperator(
+#     task_id="captura_paciente_hse",
+#     python_callable=df_paciente,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t15 = PythonOperator(
     task_id="captura_pagu_objeto_hse",
@@ -1362,23 +1362,23 @@ t16 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t17 = PythonOperator(
-    task_id="captura_setor_hse",
-    python_callable=df_setor,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t17 = PythonOperator(
+#     task_id="captura_setor_hse",
+#     python_callable=df_setor,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t18 = PythonOperator(
-    task_id="captura_sgru_cid_hse",
-    python_callable=df_sgru_cid,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t18 = PythonOperator(
+#     task_id="captura_sgru_cid_hse",
+#     python_callable=df_sgru_cid,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t19 = PythonOperator(
-    task_id="captura_sintoma_avaliacao_hse",
-    python_callable=df_sintoma_avaliacao,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t19 = PythonOperator(
+#     task_id="captura_sintoma_avaliacao_hse",
+#     python_callable=df_sintoma_avaliacao,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t20 = PythonOperator(
     task_id="captura_tempo_processo_hse",
@@ -1386,17 +1386,17 @@ t20 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t21 = PythonOperator(
-    task_id="captura_tip_mar_hse",
-    python_callable=df_tip_mar,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t21 = PythonOperator(
+#     task_id="captura_tip_mar_hse",
+#     python_callable=df_tip_mar,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t22 = PythonOperator(
-    task_id="captura_tip_res_hse",
-    python_callable=df_tip_res,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t22 = PythonOperator(
+#     task_id="captura_tip_res_hse",
+#     python_callable=df_tip_res,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t23 = PythonOperator(
     task_id="captura_triagem_atendimento_hse",
@@ -1404,11 +1404,11 @@ t23 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t24 = PythonOperator(
-    task_id="captura_usuario_hse",
-    python_callable=df_usuario,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t24 = PythonOperator(
+#     task_id="captura_usuario_hse",
+#     python_callable=df_usuario,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
-t1 >> t3 >> t4 >> t5 >> t8 >> t9 >> t10 >> t11 >> t12 >> t13 >> t14 >> t15
-#, t17, t18, t19, t21, t22, t24) >> t16 >> t23 >> t20 >> t7 >> t2 >> t0
+#(t1, t3, t4, t5, t8, t9, t10, t11, t12, t13, t14, t15, t17, t18, t21, t22, t24) >> t16 >> t23 >> t20 >> t7 >> t2 >> t0
+t15 >> t16 >> t23 >> t20 >> t7 >> t2 >> t0
