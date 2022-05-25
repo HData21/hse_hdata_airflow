@@ -855,6 +855,7 @@ def df_registro_alta():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_registro_alta.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        print(df_dim.info())
         
         df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
 
