@@ -145,7 +145,8 @@ def df_atendime():
         #                 'HSE.ATENDIME',
         #                 'CD_ATENDIMENTO')
 
-        df_diagnostico_atendime(atendimentos)
+        if len(lista_cds_atendimentos) > 0:
+            df_diagnostico_atendime(atendimentos)
 
 def df_cid():
     print("Entrou no df_cid")
