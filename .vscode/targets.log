@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 08:13:01 2022
+# Make data base, printed on Thu May 26 15:31:53 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/raphael/hse_hdata-airflow
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-cb78e460-774b-4cc2-a08c-b0130fbb1a8c.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ea8f7932-1eca-4506-9354-6a49fe1b893b.sock
 # environment
 WSL_INTEROP = /run/WSL/12_interop
 # makefile (from 'Makefile', line 4)
@@ -362,6 +362,6 @@ internal-test: internal-install-local-deps
 # strcache performance: lookups = 87 / hit rate = 43%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/87=1%
-# Finished Make data base on Thu May 26 08:13:01 2022
+# Finished Make data base on Thu May 26 15:31:53 2022
 
  
