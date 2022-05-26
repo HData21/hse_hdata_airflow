@@ -1274,11 +1274,11 @@ t0 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t2 = PythonOperator(
-    task_id="captura_classificacao_risco_hse",
-    python_callable=df_classificacao_risco,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t2 = PythonOperator(
+#     task_id="captura_classificacao_risco_hse",
+#     python_callable=df_classificacao_risco,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t3 = PythonOperator(
 #     task_id="captura_classificacao_hse",
@@ -1412,4 +1412,4 @@ t2 = PythonOperator(
 #     dag=dag)
 
 #(t1, t3, t4, t5, t8, t9, t10, t11, t12, t13, t14, t15, t17, t18, t21, t22, t24) >> t16 >> t23 >> t20 >> t7 >> t2 >> t0
-t2 >> t0
+# t2 >> t0
