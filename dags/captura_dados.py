@@ -1298,11 +1298,11 @@ t2 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t7 = PythonOperator(
-    task_id="captura_documento_clinico_hse",
-    python_callable=df_documento_clinico,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t7 = PythonOperator(
+#     task_id="captura_documento_clinico_hse",
+#     python_callable=df_documento_clinico,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t8 = PythonOperator(
 #     task_id="captura_esp_med_hse",
@@ -1345,11 +1345,11 @@ t7 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t14 = PythonOperator(
-    task_id="captura_paciente_hse",
-    python_callable=df_paciente,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t14 = PythonOperator(
+#     task_id="captura_paciente_hse",
+#     python_callable=df_paciente,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t15 = PythonOperator(
 #     task_id="captura_pagu_objeto_hse",
