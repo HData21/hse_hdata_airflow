@@ -1275,11 +1275,11 @@ t0 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t2 = PythonOperator(
-    task_id="captura_classificacao_risco_hse",
-    python_callable=df_classificacao_risco,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t2 = PythonOperator(
+#     task_id="captura_classificacao_risco_hse",
+#     python_callable=df_classificacao_risco,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t3 = PythonOperator(
 #     task_id="captura_classificacao_hse",
@@ -1299,11 +1299,11 @@ t2 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t6 = PythonOperator(
-    task_id="captura_documento_clinico_hse",
-    python_callable=df_documento_clinico,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t6 = PythonOperator(
+#     task_id="captura_documento_clinico_hse",
+#     python_callable=df_documento_clinico,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t7 = PythonOperator(
 #     task_id="captura_esp_med_hse",
@@ -1358,11 +1358,11 @@ t6 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t16 = PythonOperator(
-    task_id="captura_registro_alta_hse",
-    python_callable=df_registro_alta,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t16 = PythonOperator(
+#     task_id="captura_registro_alta_hse",
+#     python_callable=df_registro_alta,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t17 = PythonOperator(
 #     task_id="captura_setor_hse",
@@ -1400,11 +1400,11 @@ t20 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t23 = PythonOperator(
-    task_id="captura_triagem_atendimento_hse",
-    python_callable=df_triagem_atendimento,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t23 = PythonOperator(
+#     task_id="captura_triagem_atendimento_hse",
+#     python_callable=df_triagem_atendimento,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t24 = PythonOperator(
 #     task_id="captura_usuario_hse",
@@ -1412,5 +1412,5 @@ t23 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t16 >> t23 >> t20 >> t6 >> t2 >> t0
+# t16 >> t23 >> t20 >> t6 >> t2 >> t0
 # (t4, t5, t7, t8, t11, t12, t13, t15, t17, t18, t21, t22, t24) >> t1 >> t14 >> t10 >> t16 >> t23 >> t20 >> t6 >> t2 >> t0
