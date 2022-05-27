@@ -1382,11 +1382,11 @@ t0 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-t20 = PythonOperator(
-    task_id="captura_tempo_processo_hse",
-    python_callable=df_tempo_processo,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t20 = PythonOperator(
+#     task_id="captura_tempo_processo_hse",
+#     python_callable=df_tempo_processo,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t21 = PythonOperator(
 #     task_id="captura_tip_mar_hse",
