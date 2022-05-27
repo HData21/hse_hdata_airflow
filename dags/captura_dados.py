@@ -118,18 +118,18 @@ def df_atendime():
 
         sql="INSERT INTO HSE.ATENDIME (CD_ATENDIMENTO, CD_MULTI_EMPRESA, CD_PACIENTE, CD_CID, CD_MOT_ALT, CD_TIP_RES, CD_CONVENIO, CD_ESPECIALID, CD_PRESTADOR, CD_ATENDIMENTO_PAI, CD_LEITO, CD_ORI_ATE, CD_SERVICO, TP_ATENDIMENTO, DT_ATENDIMENTO, HR_ATENDIMENTO, HR_ALTA, HR_ALTA_MEDICA, CD_TIP_MAR, CD_SINTOMA_AVALIACAO, NM_USUARIO_ALTA_MEDICA, CD_SETOR) VALUES (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18, :19, :20, :21)"
 
-        # df_list = df_diff.values.tolist()
-        # n = 0
-        # cols = []
-        # for i in df_diff.iterrows():
-        #     cols.append(df_list[n])
-        #     n += 1
+        df_list = df_diff.values.tolist()
+        n = 0
+        cols = []
+        for i in df_diff.iterrows():
+            cols.append(df_list[n])
+            n += 1
 
-        # cursor.executemany(sql, cols)
+        cursor.executemany(sql, cols)
 
-        # con.commit()
-        # cursor.close
-        # con.close
+        con.commit()
+        cursor.close
+        con.close
 
         print("Dados ATENDIME inseridos")
 
@@ -388,24 +388,24 @@ def df_diagnostico_atendime(atendimentos):
     print("dados para incremento")
     print(df_diff.info())
 
-    # con = connect_hdata()
+    con = connect_hdata()
 
-    # cursor = con.cursor()
+    cursor = con.cursor()
 
-    # sql="INSERT INTO HSE.DIAGNOSTICO_ATENDIME (CD_CID, CD_DIAGNOSTICO_ATENDIME, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
+    sql="INSERT INTO HSE.DIAGNOSTICO_ATENDIME (CD_CID, CD_DIAGNOSTICO_ATENDIME, CD_ATENDIMENTO) VALUES (:1, :2, :3)"
 
-    # df_list = df_diff.values.tolist()
-    # n = 0
-    # cols = []
-    # for i in df_diff.iterrows():
-    #     cols.append(df_list[n])
-    #     n += 1
+    df_list = df_diff.values.tolist()
+    n = 0
+    cols = []
+    for i in df_diff.iterrows():
+        cols.append(df_list[n])
+        n += 1
 
-    # cursor.executemany(sql, cols)
+    cursor.executemany(sql, cols)
 
-    # con.commit()
-    # cursor.close
-    # con.close
+    con.commit()
+    cursor.close
+    con.close
 
     print("Dados DIAGNOSTICO_ATENDIME inseridos")
 
