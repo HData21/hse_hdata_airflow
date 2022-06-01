@@ -11,8 +11,8 @@ from airflow.operators.python_operator import PythonOperator
 from connections.oracle.connections_sml import connect_hse, connect_hdata, engine_hse, connect
 # from connections.oracle.connections import connect_hse, connect_hdata, engine_hse, connect
 from collections import OrderedDict as od
-from queries.rhp.queries import *
-from queries.rhp.queries_hdata import *
+from queries.hse.queries import *
+from queries.hse.queries_hdata import *
 
 from utils.integrity_checker import notify_email
 
