@@ -59,7 +59,7 @@ def update_cells(df_eq, table_name, CD):
 
 def df_atendime():
     print("Entrou no df_atendime")
-    for dt in rrule.rrule(rrule.DAILY, dtstart=datetime.datetime(2019, 1, 1), until=datetime.datetime(2022, 1, 31)):
+    for dt in rrule.rrule(rrule.DAILY, dtstart=datetime.datetime(2021, 1, 1), until=datetime.datetime(2021, 12, 31)):
         data_1 = dt
         data_2 = dt
 
