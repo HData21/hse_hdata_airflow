@@ -68,24 +68,24 @@ def df_atendime():
         df_dim = pd.read_sql(query_atendime.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
         print(df_dim.info())
 
-        df_dim["CD_MULTI_EMPRESA"] = df_dim["CD_MULTI_EMPRESA"].fillna(0)
-        df_dim["CD_PACIENTE"] = df_dim["CD_PACIENTE"].fillna(0)
-        df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
-        df_dim["CD_CID"] = df_dim["CD_CID"].fillna("0")
-        df_dim["CD_MOT_ALT"] = df_dim["CD_MOT_ALT"].fillna(0)
-        df_dim["CD_TIP_RES"] = df_dim["CD_TIP_RES"].fillna(0)
-        df_dim["CD_CONVENIO"] = df_dim["CD_CONVENIO"].fillna(0)
-        df_dim["CD_ESPECIALID"] = df_dim["CD_ESPECIALID"].fillna(0)
-        df_dim["CD_PRESTADOR"] = df_dim["CD_PRESTADOR"].fillna(0)
-        df_dim["CD_ATENDIMENTO_PAI"] = df_dim["CD_ATENDIMENTO_PAI"].fillna(0)
-        df_dim["CD_LEITO"] = df_dim["CD_LEITO"].fillna(0)
-        df_dim["CD_ORI_ATE"] = df_dim["CD_ORI_ATE"].fillna(0)
-        df_dim["CD_SERVICO"] = df_dim["CD_SERVICO"].fillna(0)
-        df_dim["TP_ATENDIMENTO"] = df_dim["TP_ATENDIMENTO"].fillna("0")
-        df_dim["CD_TIP_MAR"] = df_dim["CD_TIP_MAR"].fillna(0)
-        df_dim["CD_SINTOMA_AVALIACAO"] = df_dim["CD_SINTOMA_AVALIACAO"].fillna(0)
-        df_dim["NM_USUARIO_ALTA_MEDICA"] = df_dim["NM_USUARIO_ALTA_MEDICA"].fillna("0")
-        df_dim["CD_SETOR"] = df_dim["CD_SETOR"].fillna(0)
+        df_dim["CD_MULTI_EMPRESA"] = df_dim["CD_MULTI_EMPRESA"].fillna(999888)
+        df_dim["CD_PACIENTE"] = df_dim["CD_PACIENTE"].fillna(999888)
+        df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(999888)
+        df_dim["CD_CID"] = df_dim["CD_CID"].fillna("N/A")
+        df_dim["CD_MOT_ALT"] = df_dim["CD_MOT_ALT"].fillna(999888)
+        df_dim["CD_TIP_RES"] = df_dim["CD_TIP_RES"].fillna(999888)
+        df_dim["CD_CONVENIO"] = df_dim["CD_CONVENIO"].fillna(999888)
+        df_dim["CD_ESPECIALID"] = df_dim["CD_ESPECIALID"].fillna(999888)
+        df_dim["CD_PRESTADOR"] = df_dim["CD_PRESTADOR"].fillna(999888)
+        df_dim["CD_ATENDIMENTO_PAI"] = df_dim["CD_ATENDIMENTO_PAI"].fillna(999888)
+        df_dim["CD_LEITO"] = df_dim["CD_LEITO"].fillna(999888)
+        df_dim["CD_ORI_ATE"] = df_dim["CD_ORI_ATE"].fillna(999888)
+        df_dim["CD_SERVICO"] = df_dim["CD_SERVICO"].fillna(999888)
+        df_dim["TP_ATENDIMENTO"] = df_dim["TP_ATENDIMENTO"].fillna("N/A")
+        df_dim["CD_TIP_MAR"] = df_dim["CD_TIP_MAR"].fillna(999888)
+        df_dim["CD_SINTOMA_AVALIACAO"] = df_dim["CD_SINTOMA_AVALIACAO"].fillna(999888)
+        df_dim["NM_USUARIO_ALTA_MEDICA"] = df_dim["NM_USUARIO_ALTA_MEDICA"].fillna("N/A")
+        df_dim["CD_SETOR"] = df_dim["CD_SETOR"].fillna(999888)
 
         df_dim['HR_ALTA'] = df_dim['HR_ALTA'].astype(str)
         df_dim['HR_ALTA_MEDICA'] = df_dim['HR_ALTA_MEDICA'].astype(str)
@@ -116,7 +116,7 @@ def df_atendime():
         con = connect_hdata()
         cursor = con.cursor()
 
-        sql="INSERT INTO HSE.ATENDIME (CD_ATENDIMENTO, CD_MULTI_EMPRESA, CD_PACIENTE, CD_CID, CD_MOT_ALT, CD_TIP_RES, CD_CONVENIO, CD_ESPECIALID, CD_PRESTADOR, CD_ATENDIMENTO_PAI, CD_LEITO, CD_ORI_ATE, CD_SERVICO, TP_ATENDIMENTO, DT_ATENDIMENTO, HR_ATENDIMENTO, HR_ALTA, HR_ALTA_MEDICA, CD_TIP_MAR, CD_SINTOMA_AVALIACAO, NM_USUARIO_ALTA_MEDICA, CD_SETOR) VALUES (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18, :19, :20, :21)"
+        sql="INSERT INTO HSE.ATENDIME (CD_ATENDIMENTO, CD_MULTI_EMPRESA, CD_PACIENTE, CD_CID, CD_MOT_ALT, CD_TIP_RES, CD_CONVENIO, CD_ESPECIALID, CD_PRESTADOR, CD_ATENDIMENTO_PAI, CD_LEITO, CD_ORI_ATE, CD_SERVICO, TP_ATENDIMENTO, DT_ATENDIMENTO, HR_ATENDIMENTO, HR_ALTA, HR_ALTA_MEDICA, CD_TIP_MAR, CD_SINTOMA_AVALIACAO, NM_USUARIO_ALTA_MEDICA, CD_SETOR) VALUES (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18, :19, :20, :21, :22)"
 
         df_list = df_diff.values.tolist()
         n = 0
@@ -126,8 +126,93 @@ def df_atendime():
             n += 1
 
         cursor.executemany(sql, cols)
-
         con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_MULTI_EMPRESA = NULL WHERE CD_MULTI_EMPRESA = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_PACIENTE = NULL WHERE CD_PACIENTE = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_CID = NULL WHERE CD_CID = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_MOT_ALT = NULL WHERE CD_MOT_ALT = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_TIP_RES = NULL WHERE CD_TIP_RES = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_CONVENIO = NULL WHERE CD_CONVENIO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_PRESTADOR = NULL WHERE CD_PRESTADOR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_PRESTADOR = NULL WHERE CD_PRESTADOR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_ATENDIMENTO_PAI = NULL WHERE CD_ATENDIMENTO_PAI = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_LEITO = NULL WHERE CD_LEITO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_ORI_ATE = NULL WHERE CD_ORI_ATE = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_SERVICO = NULL WHERE CD_SERVICO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET TP_ATENDIMENTO = NULL WHERE TP_ATENDIMENTO = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_TIP_MAR = NULL WHERE CD_TIP_MAR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_SINTOMA_AVALIACAO = NULL WHERE CD_SINTOMA_AVALIACAO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET NM_USUARIO_ALTA_MEDICA = NULL WHERE NM_USUARIO_ALTA_MEDICA = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        query = "UPDATE HSE.ATENDIME SET CD_SETOR = NULL WHERE CD_SETOR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
         cursor.close
         con.close
 
