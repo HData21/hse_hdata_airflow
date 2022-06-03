@@ -7,9 +7,8 @@ from sqlalchemy.orm import sessionmaker
 
 def connect_hse():
     os.environ["NLS_LANG"] = ".UTF8"
-    # dsn_tns = cx_Oracle.makedsn('IP', 1521, service_name='sml')  # 172.17.0.1
-    dsn_tns = cx_Oracle.makedsn('10.0.1.3', 1521, service_name='')  # 172.17.0.1
-    return cx_Oracle.connect('hdata', 'hd4t4', dsn_tns)
+    dsn_tns = cx_Oracle.makedsn('10.0.0.2', 1521, service_name='prd')  # 172.17.0.1
+    return cx_Oracle.connect('hdata', 'hd4t42022', dsn_tns)
 
 def connect_hdata():
     os.environ["NLS_LANG"] = ".UTF8"

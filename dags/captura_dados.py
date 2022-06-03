@@ -8,7 +8,8 @@ from datetime import timedelta, date
 from dateutil import rrule
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from connections.oracle.connections_sml import connect_hse, connect_hdata, engine_hse, connect
+# from connections.oracle.connections_sml import connect_hse, connect_hdata, engine_hse, connect
+from connections.oracle.connections import connect_hse, connect_hdata, engine_hse, connect
 from collections import OrderedDict as od
 from queries.hse.queries import *
 from queries.hse.queries_hdata import *
@@ -1352,11 +1353,11 @@ dt_ini = datetime.datetime(2020, 1, 1)
 dag = DAG("captura_dados_hse_sml", default_args=default_args, schedule_interval=None)
 # dag = DAG("captura_dados_hse_prod", default_args=default_args, schedule_interval="0 6,7,8,9 * * *")
 
-t0 = PythonOperator(
-    task_id="captura_atendime_hse",
-    python_callable=df_atendime,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t0 = PythonOperator(
+#     task_id="captura_atendime_hse",
+#     python_callable=df_atendime,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 # t1 = PythonOperator(
 #     task_id="captura_cid_hse",
@@ -1429,11 +1430,11 @@ t0 = PythonOperator(
 #     on_failure_callback=notify_email,
 #     dag=dag)
 
-# t13 = PythonOperator(
-#     task_id="captura_ori_ate_hse",
-#     python_callable=df_ori_ate,
-#     on_failure_callback=notify_email,
-#     dag=dag)
+t13 = PythonOperator(
+    task_id="captura_ori_ate_hse",
+    python_callable=df_ori_ate,
+    on_failure_callback=notify_email,
+    dag=dag)
 
 # t14 = PythonOperator(
 #     task_id="captura_paciente_hse",
