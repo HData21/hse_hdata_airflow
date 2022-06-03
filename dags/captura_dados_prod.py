@@ -16,7 +16,7 @@ from queries.hse.queries_hdata import *
 
 from utils.integrity_checker import notify_email
 
-START_DATE = airflow.utils.dates.days_ago(1)
+START_DATE = airflow.utils.dates.days_ago(0)
 
 default_args = {
     "owner": "raphael",
