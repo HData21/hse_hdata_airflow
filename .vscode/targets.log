@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2014 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  2 17:49:02 2022
+# Make data base, printed on Fri Jun  3 11:17:52 2022
 
 # Variables
 
@@ -65,9 +67,9 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/raphael/hse_hdata-airflow
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-94b038da-c4f1-48f6-99ae-6a440d9b55f0.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1155ad36-457e-4a23-9853-63d2d3a1fa95.sock
 # environment
-WSL_INTEROP = /run/WSL/154_interop
+WSL_INTEROP = /run/WSL/12_interop
 # makefile (from 'Makefile', line 4)
 AIRFLOW_EXTRAS := postgres
 # environment
@@ -288,6 +290,7 @@ reset-airflow:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 70):
 	@docker-compose down -v || true
+ 
 	@docker-compose rm -f
 	rm -f webserver_config.py
 
@@ -309,9 +312,6 @@ clean-all: clean-pytest clean-venv reset-airflow
 #  File has not been updated.
 
 internal-lint: internal-install-local-deps
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -362,6 +362,6 @@ internal-test: internal-install-local-deps
 # strcache performance: lookups = 87 / hit rate = 43%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/87=1%
-# Finished Make data base on Thu Jun  2 17:49:02 2022
+# Finished Make data base on Fri Jun  3 11:17:52 2022
 
  

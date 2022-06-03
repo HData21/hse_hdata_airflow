@@ -1577,20 +1577,20 @@ dt_ini = datetime.datetime(2021, 1, 1)
 dag = DAG("insert_dados_hse_variabilidade", default_args=default_args, schedule_interval=None)
 # dag = DAG("insert_dados_hse_variabilidade", default_args=default_args, schedule_interval="0 6,7,8,9 * * *")
 
-t25 = PythonOperator(
-    task_id="insert_pre_med_hse",
-    python_callable=df_pre_med,
-    dag=dag)
+# t25 = PythonOperator(
+#     task_id="insert_pre_med_hse",
+#     python_callable=df_pre_med,
+#     dag=dag)
 
 # # t26 = PythonOperator(
 # #     task_id="insert_itpre_med_hse",
 # #     python_callable=df_itpre_med,
 # #     dag=dag)
 
-# t27 = PythonOperator(
-#     task_id="insert_tip_presc_hse",
-#     python_callable=df_tip_presc,
-#     dag=dag)
+t27 = PythonOperator(
+    task_id="insert_tip_presc_hse",
+    python_callable=df_tip_presc,
+    dag=dag)
 
 # t28 = PythonOperator(
 #     task_id="insert_for_apl_hse",
