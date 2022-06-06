@@ -1466,11 +1466,11 @@ t18 = PythonOperator(
     on_failure_callback=notify_email,
     dag=dag)
 
-t19 = PythonOperator(
-    task_id="captura_sintoma_avaliacao_hse",
-    python_callable=df_sintoma_avaliacao,
-    on_failure_callback=notify_email,
-    dag=dag)
+# t19 = PythonOperator(
+#     task_id="captura_sintoma_avaliacao_hse",
+#     python_callable=df_sintoma_avaliacao,
+#     on_failure_callback=notify_email,
+#     dag=dag)
 
 t20 = PythonOperator(
     task_id="captura_tempo_processo_hse",
@@ -1503,4 +1503,4 @@ t24 = PythonOperator(
     dag=dag)
 
 # t16 >> t23 >> t20 >> t6 >> t2 >> t0
-(t4, t5, t7, t8, t11, t12, t13, t15, t17, t18, t21, t22, t24) >> t1 >> t14 >> t10 >> t16 >> t23 >> t20 >> t6 >> t2 >> t0
+(t4, t5, t8, t11, t12, t13, t17, t18, t21, t22, t24) >> t7 >> t15 >> t1 >> t14 >> t10 >> t16 >> t23 >> t20 >> t6 >> t2 >> t0
