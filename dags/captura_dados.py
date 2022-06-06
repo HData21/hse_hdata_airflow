@@ -1348,7 +1348,7 @@ def df_usuario():
 dt_ontem = datetime.datetime.today() - datetime.timedelta(days=1)
 # dt_ini = dt_ontem - datetime.timedelta(days=5)
 # dt_ontem = datetime.datetime(2020, 2, 15)
-dt_ini = datetime.datetime(2020, 1, 1)
+dt_ini = datetime.datetime(2019, 1, 1)
 
 dag = DAG("captura_dados_hse_sml", default_args=default_args, schedule_interval=None)
 # dag = DAG("captura_dados_hse_prod", default_args=default_args, schedule_interval="0 6,7,8,9 * * *")
