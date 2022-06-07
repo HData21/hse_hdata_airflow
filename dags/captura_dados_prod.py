@@ -64,7 +64,7 @@ def df_atendime():
         data_1 = dt
         data_2 = dt
 
-        print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
+        print(data_1.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_atendime.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
         print(df_dim.info())
