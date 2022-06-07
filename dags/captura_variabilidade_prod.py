@@ -1575,7 +1575,7 @@ dt_ontem = datetime.datetime.today() - datetime.timedelta(days=1)
 dt_ini = datetime.datetime(2021, 12, 10)
 
 # dag = DAG("insert_dados_hse_variabilidade", default_args=default_args, schedule_interval=None)
-dag = DAG("captura_dados_hse_variabilidade_prod", default_args=default_args, schedule_interval="0 0,1 30 * *")
+dag = DAG("captura_dados_hse_variabilidade_prod", default_args=default_args, schedule_interval="30 0,1 * * *")
 
 t25 = PythonOperator(
     task_id="insert_pre_med_hse",
