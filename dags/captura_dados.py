@@ -159,7 +159,7 @@ def df_atendime():
         cursor.execute(sql)
         con.commit()
 
-        query = "UPDATE HSE.ATENDIME SET CD_PRESTADOR = NULL WHERE CD_PRESTADOR = 999888"
+        query = "UPDATE HSE.ATENDIME SET CD_ESPECIALID = NULL WHERE CD_ESPECIALID = 999888"
 
         cursor.execute(sql)
         con.commit()
