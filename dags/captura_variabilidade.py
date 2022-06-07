@@ -1582,11 +1582,6 @@ t25 = PythonOperator(
     python_callable=df_pre_med,
     dag=dag)
 
-# t26 = PythonOperator(
-#     task_id="insert_itpre_med_hse",
-#     python_callable=df_itpre_med,
-#     dag=dag)
-
 t27 = PythonOperator(
     task_id="insert_tip_presc_hse",
     python_callable=df_tip_presc,
@@ -1622,91 +1617,6 @@ t34 = PythonOperator(
     python_callable=df_pro_fat,
     dag=dag)
 
-# t35 = PythonOperator(
-#     task_id="insert_tuss_hse",
-#     python_callable=df_tuss,
-#     dag=dag)
-
-# t36 = PythonOperator(
-#     task_id="insert_uni_pro_hse",
-#     python_callable=df_uni_pro,
-#     dag=dag)
-
-# t37 = PythonOperator(
-#     task_id="insert_reg_amb_hse",
-#     python_callable=df_reg_amb,
-#     dag=dag)
-
-# t38 = PythonOperator(
-#     task_id="insert_itreg_amb_hse",
-#     python_callable=df_itreg_amb,
-#     dag=dag)
-
-# t39 = PythonOperator(
-#     task_id="insert_reg_fat_hse",
-#     python_callable=df_reg_fat,
-#     dag=dag)
-
-# t40 = PythonOperator(
-#     task_id="insert_itreg_fat_hse",
-#     python_callable=df_itreg_fat,
-#     dag=dag)
-
-# t41 = PythonOperator(
-#     task_id="insert_custo_final_hse",
-#     python_callable=df_custo_final,
-#     dag=dag)
-
-# t42 = PythonOperator(
-#     task_id="insert_mvto_estoque_hse",
-#     python_callable=df_mvto_estoque,
-#     dag=dag)
-
-# t43 = PythonOperator(
-#     task_id="insert_itmvto_estoque_hse",
-#     python_callable=df_itmvto_estoque,
-#     dag=dag)
-
-# t44 = PythonOperator(
-#     task_id="insert_quantidade_diarias_hse",
-#     python_callable=df_quantidade_diarias,
-#     dag=dag)
-
-# t45 = PythonOperator(
-#     task_id="insert_remessa_fatura_hse",
-#     python_callable=df_remessa_fatura,
-#     dag=dag)
-
-# t46 = PythonOperator(
-#     task_id="insert_repasse_hse",
-#     python_callable=df_repasse,
-#     dag=dag)
-
-# t47 = PythonOperator(
-#     task_id="insert_it_repasse_hse",
-#     python_callable=df_it_repasse,
-#     dag=dag)
-
-# t48 = PythonOperator(
-#     task_id="insert_itent_pro_hse",
-#     python_callable=df_itent_pro,
-#     dag=dag)
-
-# t49 = PythonOperator(
-#     task_id="insert_glosas_hse",
-#     python_callable=df_glosas,
-#     dag=dag)
-
-# t50 = PythonOperator(
-#     task_id="insert_custo_medio_mensal_hse",
-#     python_callable=df_custo_medio_mensal,
-#     dag=dag)
-
-# t51 = PythonOperator(
-#     task_id="insert_fa_custo_atendimento_hse",
-#     python_callable=df_fa_custo_atendimento,
-#     dag=dag)
-
 t52 = PythonOperator(
     task_id="insert_especie_hse",
     python_callable=df_especie,
@@ -1726,15 +1636,5 @@ t55 = PythonOperator(
     task_id="insert_gru_fat_hse",
     python_callable=df_gru_fat,
     dag=dag)
-
-# t56 = PythonOperator(
-#     task_id="insert_motivo_glosa_hse",
-#     python_callable=df_motivo_glosa,
-#     dag=dag)
-
-# t57 = PythonOperator(
-#     task_id="insert_mot_dev_hse",
-#     python_callable=df_mot_dev,
-#     dag=dag)
 
 t28 >> t30 >> t32 >> t33 >> t34 >> t52 >> t53 >> t54 >> t55 >> t27 >> t29 >> t25
