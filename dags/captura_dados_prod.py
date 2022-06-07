@@ -67,6 +67,7 @@ def df_atendime():
         print(data_1.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_atendime.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
         print(df_dim.info())
 
         df_dim["CD_MULTI_EMPRESA"] = df_dim["CD_MULTI_EMPRESA"].fillna(999888)
@@ -240,6 +241,7 @@ def df_cid():
     print("Entrou no df_cid")
 
     df_dim = pd.read_sql(query_cid, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_cid_hdata, connect_hdata())
 
@@ -287,6 +289,7 @@ def df_classificacao_risco():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_classificacao_risco.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
 
         df_dim["CD_CLASSIFICACAO_RISCO"] = df_dim["CD_CLASSIFICACAO_RISCO"].fillna(0)
         df_dim["CD_COR_REFERENCIA"] = df_dim["CD_COR_REFERENCIA"].fillna(0)
@@ -338,6 +341,7 @@ def df_classificacao():
     print("Entrou no df_classificacao")
 
     df_dim = pd.read_sql(query_classificacao, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_classificacao_hdata, connect_hdata())
 
@@ -380,6 +384,7 @@ def df_convenio():
     print("Entrou no df_convenio")
 
     df_dim = pd.read_sql(query_convenio, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_convenio_hdata, connect_hdata())
 
@@ -422,6 +427,7 @@ def df_cor_referencia():
     print("Entrou no df_cor_referencia")
 
     df_dim = pd.read_sql(query_cor_referencia, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_cor_referencia_hdata, connect_hdata())
 
@@ -464,6 +470,7 @@ def df_diagnostico_atendime(atendimentos):
     print("Entrou no df_diagnostico_atendime")
 
     df_dim = pd.read_sql(query_diagnostico_atendime.format(atendimentos=atendimentos), connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_diagnostico_atendime_hdata.format(atendimentos=atendimentos), connect_hdata())
 
@@ -511,6 +518,7 @@ def df_documento_clinico():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_documento_clinico.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
 
         df_dim["CD_OBJETO"] = df_dim["CD_OBJETO"].fillna(0)
         df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
@@ -560,6 +568,7 @@ def df_esp_med():
     print("Entrou no df_esp_med")
 
     df_dim = pd.read_sql(query_esp_med, connect_hse())
+    connect_hse().close
 
     print(df_dim)
 
@@ -604,6 +613,7 @@ def df_especialidad():
     print("Entrou no df_especialidad")
 
     df_dim = pd.read_sql(query_especialidad, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_especialidad_hdata, connect_hdata())
 
@@ -646,6 +656,7 @@ def df_gru_cid():
     print("Entrou no df_gru_cid")
 
     df_dim = pd.read_sql(query_gru_cid, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_gru_cid_hdata, connect_hdata())
 
@@ -688,6 +699,7 @@ def df_mot_alt():
     print("Entrou no df_mot_alt")
 
     df_dim = pd.read_sql(query_mot_alt, connect_hse())
+        connect_hse().close
 
     df_stage = pd.read_sql(query_mot_alt_hdata, connect_hdata())
 
@@ -723,6 +735,7 @@ def df_multi_empresa():
     print("Entrou no df_multi_empresa")
 
     df_dim = pd.read_sql(query_multi_empresa, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_multi_empresa_hdata, connect_hdata())
 
@@ -765,6 +778,7 @@ def df_ori_ate():
     print("Entrou no df_ori_ate")
 
     df_dim = pd.read_sql(query_ori_ate, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_ori_ate_hdata, connect_hdata())
 
@@ -807,6 +821,7 @@ def df_prestador():
     print("Entrou no df_prestador")
 
     df_dim = pd.read_sql(query_prestador, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_prestador_hdata, connect_hdata())
 
@@ -849,6 +864,7 @@ def df_paciente():
     print("Entrou no df_paciente")
 
     df_dim = pd.read_sql(query_paciente, connect_hse())
+    connect_hse().close
 
     print(df_dim.info())
 
@@ -897,6 +913,7 @@ def df_pagu_objeto():
     print("Entrou no df_pagu_objeto")
 
     df_dim = pd.read_sql(query_pagu_objeto, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_pagu_objeto_hdata, connect_hdata())
 
@@ -944,6 +961,7 @@ def df_registro_alta():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_registro_alta.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
         print(df_dim.info())
         
         df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
@@ -991,6 +1009,7 @@ def df_setor():
     print("Entrou no df_setor")
 
     df_dim = pd.read_sql(query_setor, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_setor_hdata, connect_hdata())
 
@@ -1033,6 +1052,7 @@ def df_sgru_cid():
     print("Entrou no df_sgru_cid")
 
     df_dim = pd.read_sql(query_sgru_cid, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_sgru_cid_hdata, connect_hdata())
 
@@ -1075,6 +1095,7 @@ def df_sintoma_avaliacao():
     print("Entrou no df_sintoma_avaliacao")
 
     df_dim = pd.read_sql(query_sintoma_avaliacao, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_sintoma_avaliacao_hdata, connect_hdata())
 
@@ -1122,6 +1143,7 @@ def df_tempo_processo():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_tempo_processo.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
 
         df_dim["CD_TIPO_TEMPO_PROCESSO"] = df_dim["CD_TIPO_TEMPO_PROCESSO"].fillna(0)
         df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
@@ -1169,6 +1191,7 @@ def df_tip_mar():
     print("Entrou no df_tip_mar")
 
     df_dim = pd.read_sql(query_tip_mar, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_tip_mar_hdata, connect_hdata())
 
@@ -1211,6 +1234,7 @@ def df_tip_res():
     print("Entrou no df_tip_res")
 
     df_dim = pd.read_sql(query_tip_res, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_tip_res_hdata, connect_hdata())
 
@@ -1258,6 +1282,7 @@ def df_triagem_atendimento():
         print(data_1.strftime('%d/%m/%Y'), ' a ', data_2.strftime('%d/%m/%Y'))
 
         df_dim = pd.read_sql(query_triagem_atendimento.format(data_ini=data_1.strftime('%d/%m/%Y'), data_fim=data_2.strftime('%d/%m/%Y')), connect_hse())
+        connect_hse().close
 
         df_dim["CD_ATENDIMENTO"] = df_dim["CD_ATENDIMENTO"].fillna(0)
         df_dim["CD_TRIAGEM_ATENDIMENTO"] = df_dim["CD_TRIAGEM_ATENDIMENTO"].fillna(0)
@@ -1307,6 +1332,7 @@ def df_usuario():
     print("Entrou no df_usuario")
 
     df_dim = pd.read_sql(query_usuario, connect_hse())
+    connect_hse().close
 
     df_stage = pd.read_sql(query_usuario_hdata, connect_hdata())
 
