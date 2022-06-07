@@ -1351,7 +1351,7 @@ dt_ontem = datetime.datetime.today() - datetime.timedelta(days=1)
 dt_ini = datetime.datetime(2021, 12, 10)
 
 # dag = DAG("captura_dados_hse_sml", default_args=default_args, schedule_interval=None)
-dag = DAG("captura_dados_hse_prod", default_args=default_args, schedule_interval="0 23,0,1 * * *")
+dag = DAG("captura_dados_hse_prod", default_args=default_args, schedule_interval="0 23,0 * * *")
 
 t0 = PythonOperator(
     task_id="captura_atendime_hse",
