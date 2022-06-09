@@ -1,5 +1,5 @@
 # Add any additional Python dependencies below:
-cx-Oracle==7.3.0 
+cx-Oracle
 d6tstack 
 d6tstack[psql] 
 google-api-python-client  
