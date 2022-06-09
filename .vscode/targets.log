@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  8 11:31:15 2022
+# Make data base, printed on Thu Jun  9 10:05:57 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/raphael/hse_hdata-airflow
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bcba9888-d0a1-429d-b917-8a288f33654d.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7be83e2f-e609-49e2-b155-ac35cb55425a.sock
 # environment
 WSL_INTEROP = /run/WSL/12_interop
 # makefile (from 'Makefile', line 4)
@@ -289,9 +289,9 @@ reset-airflow:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 70):
+ 
 	@docker-compose down -v || true
 	@docker-compose rm -f
- 
 	rm -f webserver_config.py
 
 venv:
@@ -362,6 +362,6 @@ internal-test: internal-install-local-deps
 # strcache performance: lookups = 87 / hit rate = 43%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/87=1%
-# Finished Make data base on Wed Jun  8 11:31:15 2022
+# Finished Make data base on Thu Jun  9 10:05:57 2022
 
  

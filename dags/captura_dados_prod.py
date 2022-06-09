@@ -129,6 +129,9 @@ def df_atendime():
         cursor.executemany(sql, cols)
         con.commit()
 
+        print("INSERÇÃO FINALIZADA")
+        print("SET NULL DADOS")
+
         query = "UPDATE HSE.ATENDIME SET CD_MULTI_EMPRESA = NULL WHERE CD_MULTI_EMPRESA = 999888"
 
         cursor.execute(sql)
@@ -217,7 +220,7 @@ def df_atendime():
         cursor.close
         con.close
 
-        print("Dados ATENDIME inseridos")
+        print("ATENDIME ATUALIZADOS")
 
         df_upd = df_dim[df_dim['CD_ATENDIMENTO'].isin(df_stage['CD_ATENDIMENTO'])]
 
