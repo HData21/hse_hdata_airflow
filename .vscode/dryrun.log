@@ -2,7 +2,6 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/raphael/hse_hdata-airflow'
 python3 -m virtualenv venv
 venv/bin/python3 -m pip install --upgrade pip
- 
 venv/bin/python3 -m pip install --trusted-host pypi.python.org "apache-airflow[postgres]==2.3.0" --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.3.0/constraints-3.8.txt  --use-deprecated legacy-resolver
 venv/bin/python3 -m pip install -r airflow.requirements.txt --use-deprecated legacy-resolver
 venv/bin/python3 -m pip install -r local.requirements.txt --use-deprecated legacy-resolver
