@@ -1570,9 +1570,9 @@ def df_mot_dev():
     print("Dados MOT_DEV inseridos")
 
 dt_ontem = datetime.datetime.today() - datetime.timedelta(days=1)
-# dt_ini = dt_ontem - datetime.timedelta(days=5)
+dt_ini = dt_ontem - datetime.timedelta(days=5)
 # dt_ontem = datetime.datetime(2021, 12, 31)
-dt_ini = datetime.datetime(2021, 12, 10)
+# dt_ini = datetime.datetime(2021, 12, 10)
 
 # dag = DAG("insert_dados_hse_variabilidade", default_args=default_args, schedule_interval=None)
 dag = DAG("captura_dados_hse_variabilidade_prod", default_args=default_args, schedule_interval="30 0,1 * * *")
