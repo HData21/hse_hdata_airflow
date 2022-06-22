@@ -139,11 +139,95 @@ def df_atendime():
         print("dados para update")
         print(df_upd.info())
 
-        # if not df_upd.empty:
+        sql = "UPDATE HSE.ATENDIME SET HR_ALTA_MEDICA = NULL WHERE HR_ALTA_MEDICA < TIMESTAMP'2019-01-01 00:00:00.000'"
 
-        #     update_cells(df_upd,
-        #                 'HSE.ATENDIME',
-        #                 'CD_ATENDIMENTO')
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET HR_ALTA = NULL WHERE HR_ALTA < TIMESTAMP'2019-01-01 00:00:00.000'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET HR_ATENDIMENTO = NULL WHERE HR_ATENDIMENTO < TIMESTAMP'2019-01-01 00:00:00.000'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_MULTI_EMPRESA = NULL WHERE CD_MULTI_EMPRESA = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_PACIENTE = NULL WHERE CD_PACIENTE = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_ATENDIMENTO = NULL WHERE CD_ATENDIMENTO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_MOT_ALT = NULL WHERE CD_MOT_ALT = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_TIP_RES = NULL WHERE CD_TIP_RES = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_CONVENIO = NULL WHERE CD_CONVENIO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_PRESTADOR = NULL WHERE CD_PRESTADOR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_ATENDIMENTO_PAI = NULL WHERE CD_ATENDIMENTO_PAI = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_ORI_ATE = NULL WHERE CD_ORI_ATE = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_SERVICO = NULL WHERE CD_SERVICO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_TIP_MAR = NULL WHERE CD_TIP_MAR = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_SINTOMA_AVALIACAO = NULL WHERE CD_SINTOMA_AVALIACAO = 999888"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET CD_CID = NULL WHERE CD_CID = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET TP_ATENDIMENTO = NULL WHERE TP_ATENDIMENTO = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
+
+        sql = "UPDATE HSE.ATENDIME SET NM_USUARIO_ALTA_MEDICA = NULL WHERE NM_USUARIO_ALTA_MEDICA = 'N/A'"
+
+        cursor.execute(sql)
+        con.commit()
 
         if len(lista_cds_atendimentos) > 0:
             df_diagnostico_atendime(atendimentos)

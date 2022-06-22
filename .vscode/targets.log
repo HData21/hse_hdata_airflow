@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 10 09:38:15 2022
+# Make data base, printed on Wed Jun 22 10:12:16 2022
 
 # Variables
 
@@ -17,7 +17,7 @@ make: *** No rule to make target 'all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -33,9 +33,9 @@ CURDIR := /home/raphael/hse_hdata-airflow
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"/home/raphael/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/tcf.json","_cacheRoot":"/home/raphael/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"/home/raphael/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/raphael/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/raphael/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/raphael/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/raphael/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/raphael/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/raphael/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
+_ = /home/raphael/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # 'override' directive
@@ -53,11 +53,9 @@ VSCODE_CWD = /mnt/c/Users/rapha/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/raphael/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/raphael/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Google/Chrome/Application:/mnt/c/Users/rapha/Oracle_19c/bin:/mnt/c/Users/rapha/Downloads/Oracle_19c/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/rapha/Oracle_19c/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/rapha/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/rapha/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/rapha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/rapha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/rapha/AppData/Roaming/npm:/mnt/c/Users/rapha/AppData/Roaming/npm:/snap/bin
+PATH = /home/raphael/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/home/raphael/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/rapha/Oracle_19c/bin:/mnt/c/Users/rapha/Downloads/Oracle_19c/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/rapha/Oracle_19c/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/rapha/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/rapha/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/rapha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/rapha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/rapha/AppData/Roaming/npm:/mnt/c/Users/rapha/AppData/Roaming/npm:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/rapha/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,9 +67,9 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /home/raphael/hse_hdata-airflow
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6dc52357-9022-4987-8a79-0997ff0eaa12.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1b0bbc3a-bbb6-4f49-92eb-8ddaab2fa0b8.sock
 # environment
-WSL_INTEROP = /run/WSL/13_interop
+WSL_INTEROP = /run/WSL/12_interop
 # makefile (from 'Makefile', line 4)
 AIRFLOW_EXTRAS := postgres
 # environment
@@ -159,7 +157,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-18.04
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=3/100=3%
+# Load=72/1024=7%, Rehash=0, Collisions=3/99=3%
 
 # Pattern-specific Variable Values
 
@@ -283,13 +281,13 @@ test-docker:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 42):
 	@docker-compose up test
 
 reset-airflow:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 70):
 	@docker-compose down -v || true
@@ -364,6 +362,6 @@ internal-test: internal-install-local-deps
 # strcache performance: lookups = 87 / hit rate = 43%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/87=1%
-# Finished Make data base on Fri Jun 10 09:38:15 2022
+# Finished Make data base on Wed Jun 22 10:12:16 2022
 
  
